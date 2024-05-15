@@ -1,0 +1,47 @@
+body{
+    background-color: #fff;
+}
+
+.logo{
+    margin-top: 15hv;
+}
+
+.inputcnpj{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.btnop{
+    border-radius: 10px;
+    background-color: #fafaef;
+    font-family: inter;
+    font-style: italic;
+}
+.inputsenha{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.inter{
+    font-family: inter;
+}
+
+.esp{
+    margin-left: 5px;
+}
+
+.btnverdeescuto{
+    background-color: #596b39;
+    font-style: italic;
+}
+.btnentrar{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.italico{
+    font-style: italic;
+}
+
+.btnverdeescuto{
+    background-color: #829A58;
+    font-style: italic;
+}
