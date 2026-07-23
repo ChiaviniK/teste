@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubra as curiosidades e a rica história da cidade de Iguape, São Paulo.">
+    <title>Curiosidades de Iguape | SP</title>
+    
+    <!-- Importando a fonte Inter do Google Fonts para um visual moderno -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           CSS VARIABLES & RESET
+           ========================================= */
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #0f172a;
+            --primary-color: #0284c7; /* Azul representando o Lagamar */
+            --card-bg: #ffffff;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --transition-speed: 0.4s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* =========================================
+           HEADER & HERO SECTION
+           ========================================= */
+        header {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
+                        url('https://images.unsplash.com/photo-1598416301284-cd9743c3f2d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* =========================================
+           MAIN LAYOUT (CSS GRID)
+           ========================================= */
+        main {
+            max-width: 1200px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .grid-container {
+            display: grid;
+            /* Grid responsiva: ajusta automaticamente o número de colunas */
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* =========================================
+           CARDS & ANIMATIONS
+           ========================================= */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary-color);
+            opacity: 0; /* Começa invisível para a animação do JS */
+            transform: translateY(30px);
+            transition: opacity var(--transition-speed) ease-out, 
+                        transform var(--transition-speed) ease-out,
+                        box-shadow 0.3s ease;
+        }
+
+        /* Classe adicionada pelo JS quando o elemento entra na tela */
+        .card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #0f172a;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* Media query para dispositivos bem pequenos */
+        @media (max-width: 480px) {
+            header h1 { font-size: 2.5rem; }
+            main { margin-top: 20px; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Descubra Iguape</h1>
+        <p>Um mergulho na história, cultura e natureza de uma das cidades mais antigas do Estado de São Paulo.</p>
+    </header>
+
+    <main>
+        <div class="grid-container" id="cards-container">
+            <!-- Os cards representam as curiosidades -->
+            <article class="card">
+                <h2>Uma das Mais Antigas</h2>
+                <p>Fundada em 1538, Iguape carrega o título de uma das cidades mais antigas do Brasil. Seu centro histórico abriga casarões coloniais que são verdadeiros museus a céu aberto, preservados pelo IPHAN.</p>
+            </article>
+
+            <article class="card">
+                <h2>O Ciclo do Arroz</h2>
+                <p>Durante o século XIX, Iguape foi uma das cidades mais ricas do país devido ao cultivo e exportação de arroz. A riqueza dessa época moldou a grandiosa arquitetura do centro da cidade.</p>
+            </article>
+
+            <article class="card">
+                <h2>A Lenda e o Santuário</h2>
+                <p>A Basílica do Senhor Bom Jesus de Iguape atrai milhares de romeiros anualmente em agosto. A lenda diz que a imagem do padroeiro foi encontrada na Praia do Una em 1647, após resistir a ataques e viagens no mar.</p>
+            </article>
+
+            <article class="card">
+                <h2>O Valo Grande</h2>
+                <p>Um canal artificial construído entre 1827 e 1852 para encurtar a viagem do arroz. A força das águas alargou o canal descontroladamente, criando um desastre ambiental histórico que mudou a geografia do Lagamar.</p>
+            </article>
+
+            <article class="card">
+                <h2>O Lagamar</h2>
+                <p>Iguape é banhada pelo Mar Pequeno e faz parte do complexo estuarino-lagunar conhecido como Lagamar. É considerado pela UNESCO como Reserva da Biosfera, abrigando uma biodiversidade ímpar e o berçário da vida marinha.</p>
+            </article>
+
+            <article class="card">
+                <h2>Carnaval de Rua</h2>
+                <p>Além de sua veia histórica e religiosa, Iguape possui um dos carnavais de rua mais tradicionais e autênticos do litoral paulista, com blocos históricos que mantêm viva a cultura local.</p>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido com 💙 diretamente do litoral de São Paulo.</p>
+    </footer>
+
+    <!-- =========================================
+         JAVASCRIPT
+         ========================================= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Selecionamos todos os cards de curiosidades
+            const cards = document.querySelectorAll('.card');
+
+            // Configuração do IntersectionObserver
+            // rootMargin: dispara a animação um pouco antes do card aparecer totalmente na tela
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.1
+            };
+
+            // Callback executado quando o elemento cruza o limiar da tela
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Adiciona a classe 'show' para iniciar a transição CSS
+                        entry.target.classList.add('show');
+                        // Para de observar o elemento após a animação rodar uma vez
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            // Inicializa o observer
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            // Observa cada card individualmente
+            cards.forEach(card => observer.observe(card));
+        });
+    </script>
+</body>
+</html>
